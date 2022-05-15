@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
@@ -7,18 +8,220 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+
+  <!--  夜间切换 -->
+  <link rel="stylesheet" href="guide/css/docsify-darklight-theme.min.css"/>
+
+  <!-- 复制内容后的弹窗提醒 -->
+  <link rel="stylesheet" href="guide/css/sweetalert.min.css" type='text/css' media='all' />
+
+  <style>
+    /*添加代码块复制按钮样式*/
+    .docsify-copy-code-button {
+      background: #00a1d6 !important;
+      color: #FFFFFF !important;
+      font-size: 13px !important;
+    }
+
+    em.search-keyword {
+      background: #f7e3a7;
+      font-style: normal;
+      padding: 2px;
+      border-radius: 2px;
+    }
+
+  </style>
 </head>
+
 <body>
-  <div id="app"></div>
+  <div id="app">
+    当前正在加载中......
+  </div>
+
   <script>
     window.$docsify = {
-      name: '',
+      name: 'DotNeter-Hpf\'s  Blog',
+      logo: 'guide/images/hupifeng_logo.jpg',
       repo: '',
-      coverpage: true, //开启封面脑功能   __coverpage.md
+      coverpage: true, //开启封面脑功能   _coverpage.md
       loadNavbar: true, //开启右上角导航栏    _navbar.md
+      loadSidebar: true,  //侧边栏  _sidebar.md
+      subMaxLevel: 3, //根据 readme.md文件中 # 标题来显示侧边栏，这里数值是多少，就显示多少层级
+      search: {
+        paths: [
+          '/',
+        'SqlSugar/数据库特色/SqlServer',
+        ], // [] or 'auto' 自动
+        placeholder: '🔍 搜索', //搜索框提示
+        noData: '找不到结果',
+        depth: 6,
+        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+        hideOtherSidebarContent: false, // 是否隐藏其他侧边栏内容
+        // themeColor: '#25798A',
+      },
+      // 谷歌分析 SEO
+      ga: 'G-ZT47HQCT8Z',
+      //添加页脚
+      footer: {
+        copy: ' ⌛<span id="sitetime"> </span><br/>',
+        auth: ' <a href="https://github.com/DotNeter-Hpf" target="_blank">🏷️ DotNeter-Hpf </a> <span> 一个人可以走的很快，但一群人才能走的更远！</span>',
+        pre: '<hr/>',
+        style: 'text-align: left;',
+      },
+
+      // markdown: {
+      //   renderer: {
+      //     code: function(code, lang, base=null) {
+
+      //       if (lang === "dot") {
+      //         return (
+      //                 '<div class="viz">'+ Viz(code, "SVG")+'</div>'
+      //         );
+      //       }
+
+      //       var pdf_renderer = function(code, lang, verify) {
+      //         function unique_id_generator(){
+      //           function rand_gen(){
+      //             return Math.floor((Math.random()+1) * 65536).toString(16).substring(1);
+      //           }
+      //           return rand_gen() + rand_gen() + '-' + rand_gen() + '-' + rand_gen() + '-' + rand_gen() + '-' + rand_gen() + rand_gen() + rand_gen();
+      //         }
+      //         if(lang && !lang.localeCompare('pdf', 'en', {sensitivity: 'base'})){
+      //           if(verify){
+      //             return true;
+      //           }else{
+      //             var divId = "markdown_code_pdf_container_" + unique_id_generator().toString();
+      //             var container_list = new Array();
+      //             if(localStorage.getItem('pdf_container_list')){
+      //               container_list = JSON.parse(localStorage.getItem('pdf_container_list'));
+      //             }
+      //             container_list.push({"pdf_location": code, "div_id": divId});
+      //             localStorage.setItem('pdf_container_list', JSON.stringify(container_list));
+      //             return (
+      //                     '<div style="margin-top:'+ PDF_MARGIN_TOP +'; margin-bottom:'+ PDF_MARGIN_BOTTOM +';" id="'+ divId +'">'
+      //                     + '<a href="'+ code + '"> Link </a> to ' + code +
+      //                     '</div>'
+      //             );
+      //           }
+      //         }
+      //         return false;
+      //       }
+      //       if(pdf_renderer(code, lang, true)){
+      //         return pdf_renderer(code, lang, false);
+      //       }
+      //       //return this.origin.code.apply(this, arguments);
+      //       return (base ? base : this.origin.code.apply(this, arguments));
+      //     }
+      //   }
+      // },
     }
+
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+
+  <!-- 全文搜索的引用 -->
+  <script src="guide/js/search.min.js"></script>
+
+  <!-- 全文搜索高亮显示 -->
+  <script src="guide/js/highlight.js"></script>
+
+  <!-- 夜间切换 -->
+  <script src="guide/js/docsify-darklight-theme.js"></script>
+
+  <!-- emoji插件 -->
+  <script src="guide/js/emoji.min.js"></script> 
+
+  <!-- 支持iconfont -->
+  <link rel="stylesheet" href="guide/css/iconfont.css">
+
+  <!-- 访问量统计 -->
+<script async src="guide/js/busuanzi.pure.mini.js"></script>
+
+<!-- 添加页脚 -->
+<script src="guide/js/docsify-footer-enh.min.js"></script>
+
+<!-- 添加网站运行时间统计 -->
+<script language=javascript>
+  function siteTime() {
+     window.setTimeout("siteTime()", 1000);
+     var seconds = 1000;
+     var minutes = seconds * 60;
+     var hours = minutes * 60;
+     var days = hours * 24;
+     var years = days * 365;
+     var today = new Date();
+     var todayYear = today.getFullYear();
+     var todayMonth = today.getMonth() + 1;
+     var todayDate = today.getDate();
+     var todayHour = today.getHours();
+     var todayMinute = today.getMinutes();
+     var todaySecond = today.getSeconds();
+     /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+     year - 作为date对象的年份，为4位年份值
+     month - 0-11之间的整数，做为date对象的月份
+     day - 1-31之间的整数，做为date对象的天数
+     hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+     minutes - 0-59之间的整数，做为date对象的分钟数
+     seconds - 0-59之间的整数，做为date对象的秒数
+     microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+     var t1 = Date.UTC(2022, 05, 15, 19, 05, 00); //北京时间2019-06-21 22:22:22 //计划考研的日子，6月20日毕业典礼结束后，人生需要继续努力，加油，看到这句话的朋友们！
+     var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+     var diff = t2 - t1;
+     var diffYears = Math.floor(diff / years);
+     var diffDays = Math.floor((diff / days) - diffYears * 365);
+     var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+     var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+     var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+     document.getElementById("sitetime").innerHTML = " 本站已安全运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分 " + diffSeconds + " 秒 ";
+  }
+  siteTime();
+</script>
+
+ <!-- 复制代码-->
+ <script src="guide/js/docsify-copy-code.min.js"></script>
+
+<!-- 复制提醒 -->
+<script src="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.js"></script>
+<script>
+  document.body.oncopy = function () {
+   swal("复制成功 🎉",
+           "很高兴能帮到你 😊   - by DotNeter-Hpf",
+           "success"); };
+</script>
+
+<!-- 回到顶部功能 -->
+<script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/jquery.goup.js"></script>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $.goup({
+      trigger: 100,
+      bottomOffset: 52,
+      locationOffset: 25,
+      //title: 'TOP',
+      titleAsText: true
+    });
+  });
+</script>
+ 
+
+
+<!-- 谷歌分析 -->
+<script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/ga.min.js"></script>
+
+<!-- 代码块样式优化-->
+<!-- <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/prism-c.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-csharp.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/prism-css.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/prism-sql.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/prism-markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/prism-json.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/prism-docker.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/prism-python.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/wugenqiang/StaticRepo/src/js/prism-go.js"></script>
+
 </body>
+
 </html>

@@ -1,8 +1,10 @@
+SqlServer.md
 
 
-# 首页
+# 想测试一下全局搜索功能是否好用
+> 想测试一下全局搜索功能是否好用
+想测试一下全局搜索功能是否好用
 
-## 测试
 ```csharp
 public class SchoolA
     {
@@ -11,8 +13,3 @@ public class SchoolA
         public string SchoolName { get; set; }
     }
 ```
-
-主页面...
-
-![](https://cdn.jsdelivr.net/gh/DotNeter-Hpf/Images/img/20220514222412.jpg)
-
