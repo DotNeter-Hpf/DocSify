@@ -73,35 +73,43 @@
         pre: '<hr/>',
         style: 'text-align: left;',
       },
+      Valine: {
+              appId: 'YRz0NHu3lOh8rQUpn2Xgp81j-gzGzoHsz',
+              appKey: 'e0VHRE3I67cUGscSWKVcHRMN',
+              // docPath: 'hash', //default to `hash` ,or you can choose `full`
+          },
 
-      plugins: [
-      //  评论功能参考：https://github.com/TaQini/docsify-livere
-      function (hook, vm) {
-        // load livere
-        hook.beforeEach(function(content) {
-                var comment = "<div id='lv-container' data-id='city' data-uid='MTAyMC81NjQyMy8zMjg4Ng=='></div>\n\n----\n"
-                // '<h1>评论</h1> 没有显示评论区？点击<a href="javascript:location.reload();">刷新</a>试试:D '
-                return content + comment;
-            });
+      // livere评论功能
+      // plugins: [
+      // //  评论功能：https://github.com/TaQini/docsify-livere
+      // function (hook, vm) {
+      //   // load livere
+      //   hook.beforeEach(function(content) {
+      //           var comment = "<div id='lv-container' data-id='city' data-uid='MTAyMC81NjQyMy8zMjg4Ng=='></div>\n\n----\n"
+      //           // '<h1>评论</h1> 没有显示评论区？点击<a href="javascript:location.reload();">刷新</a>试试:D '
+      //           return content + comment;
+      //       });
             
-        // copy
-        hook.doneEach(function() {
-             (function(d, s) {
-                 var j, e = d.getElementsByTagName(s)[0];
-                 if (typeof LivereTower === 'function') { return; }
-                 j = d.createElement(s);
-                 j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-                 j.async = true;
-                 e.parentNode.insertBefore(j, e);
-             })(document, 'script');
-          });
+      //   // copy
+      //   hook.doneEach(function() {
+      //        (function(d, s) {
+      //            var j, e = d.getElementsByTagName(s)[0];
+      //            if (typeof LivereTower === 'function') { return; }
+      //            j = d.createElement(s);
+      //            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      //            j.async = true;
+      //            e.parentNode.insertBefore(j, e);
+      //        })(document, 'script');
+      //     });
 
-        // parse twemoji
-        hook.doneEach(function() {
-                twemoji.parse(document);
-            });
-      },
-      ],
+      //   // parse twemoji
+      //   hook.doneEach(function() {
+      //           twemoji.parse(document);
+      //       });
+      // },
+      // ],
+
+
 
       // markdown: {
       //   renderer: {
@@ -265,7 +273,9 @@
 <!-- gif -->
 <script src="//unpkg.com/docsify-gifcontrol/dist/docsify-gifcontrol.js"></script>
 
-
+<!-- valine评论功能 -->
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script src="//unpkg.com/docsify-valine/dist/docsify-valine.min.js"></script>
 
 </body>
 
