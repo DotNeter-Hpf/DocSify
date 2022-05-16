@@ -73,11 +73,23 @@
         pre: '<hr/>',
         style: 'text-align: left;',
       },
+      //Valine日志 删除：leancloud → 数据存储 → 结构化数据 → Comment
       Valine: {
               appId: 'YRz0NHu3lOh8rQUpn2Xgp81j-gzGzoHsz',
               appKey: 'e0VHRE3I67cUGscSWKVcHRMN',
               // docPath: 'hash', //default to `hash` ,or you can choose `full`
           },
+      //页面上方出现绿色的进度条
+      progress: {
+        position: "top",
+        color: "var(--theme-color,#42b983)",
+        height: "3px",
+      },
+      //每个页面显示最后更新时间
+      timeUpdater: {
+    text: "<div align='center' width='200px' style='color:gray;font-size:15px'>-------------- 最后更新时间:&emsp;{docsify-updated} --------------</div>",
+    formatUpdated: "{YYYY} 年 {MM} 月 {DD} 日 {HH} : {mm} : {ss}",
+  },
 
       // livere评论功能
       // plugins: [
@@ -109,53 +121,6 @@
       // },
       // ],
 
-
-
-      // markdown: {
-      //   renderer: {
-      //     code: function(code, lang, base=null) {
-
-      //       if (lang === "dot") {
-      //         return (
-      //                 '<div class="viz">'+ Viz(code, "SVG")+'</div>'
-      //         );
-      //       }
-
-      //       var pdf_renderer = function(code, lang, verify) {
-      //         function unique_id_generator(){
-      //           function rand_gen(){
-      //             return Math.floor((Math.random()+1) * 65536).toString(16).substring(1);
-      //           }
-      //           return rand_gen() + rand_gen() + '-' + rand_gen() + '-' + rand_gen() + '-' + rand_gen() + '-' + rand_gen() + rand_gen() + rand_gen();
-      //         }
-      //         if(lang && !lang.localeCompare('pdf', 'en', {sensitivity: 'base'})){
-      //           if(verify){
-      //             return true;
-      //           }else{
-      //             var divId = "markdown_code_pdf_container_" + unique_id_generator().toString();
-      //             var container_list = new Array();
-      //             if(localStorage.getItem('pdf_container_list')){
-      //               container_list = JSON.parse(localStorage.getItem('pdf_container_list'));
-      //             }
-      //             container_list.push({"pdf_location": code, "div_id": divId});
-      //             localStorage.setItem('pdf_container_list', JSON.stringify(container_list));
-      //             return (
-      //                     '<div style="margin-top:'+ PDF_MARGIN_TOP +'; margin-bottom:'+ PDF_MARGIN_BOTTOM +';" id="'+ divId +'">'
-      //                     + '<a href="'+ code + '"> Link </a> to ' + code +
-      //                     '</div>'
-      //             );
-      //           }
-      //         }
-      //         return false;
-      //       }
-      //       if(pdf_renderer(code, lang, true)){
-      //         return pdf_renderer(code, lang, false);
-      //       }
-      //       //return this.origin.code.apply(this, arguments);
-      //       return (base ? base : this.origin.code.apply(this, arguments));
-      //     }
-      //   }
-      // },
     }
 
   </script>
@@ -276,6 +241,12 @@
 <!-- valine评论功能 -->
 <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 <script src="//unpkg.com/docsify-valine/dist/docsify-valine.min.js"></script>
+
+<!-- 页面上方出现绿色的进度条 -->
+<script src="https://cdn.jsdelivr.net/npm/docsify-progress@latest/dist/progress.min.js"></script>
+
+<!-- 每个页面显示最后更新时间 -->
+<script src="https://cdn.jsdelivr.net/npm/docsify-updated/src/time-updater.js"></script>
 
 </body>
 
