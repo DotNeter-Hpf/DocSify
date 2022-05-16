@@ -46,7 +46,7 @@
       coverpage: true, //开启封面脑功能   _coverpage.md
       loadNavbar: true, //开启右上角导航栏    _navbar.md
       loadSidebar: true,  //侧边栏  _sidebar.md
-      subMaxLevel: 3, //根据 readme.md文件中 # 标题来显示侧边栏，这里数值是多少，就显示多少层级
+      subMaxLevel: 1, //根据 readme.md文件中 # 标题来显示侧边栏，这里数值是多少，就显示多少层级
       search: {
         paths:'auto',
         // paths: [
@@ -61,7 +61,7 @@
         hideOtherSidebarContent: false, // 是否隐藏其他侧边栏内容
         // themeColor: '#25798A',
       },
-      // 谷歌分析 SEO
+      // 谷歌分析 SEO，对应封面的访问量和访客数
       ga: 'G-ZT47HQCT8Z',
       //添加页脚
       footer: {
@@ -81,6 +81,7 @@
                 return content + comment;
             });
             
+        // copy
         hook.doneEach(function() {
              (function(d, s) {
                  var j, e = d.getElementsByTagName(s)[0];
@@ -91,6 +92,11 @@
                  e.parentNode.insertBefore(j, e);
              })(document, 'script');
           });
+
+        // parse twemoji
+        hook.doneEach(function() {
+                twemoji.parse(document);
+            });
       },
       ],
 
