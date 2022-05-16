@@ -14,6 +14,21 @@ public class SchoolA
     }
 ```
 
+
+
+
+
+<!-- Hover to play, unhover to pause (default) -->
+![](/guide/images/pigjump.gif)
+
+
+<!-- Click to play, click again to pause (using inline option) -->
+![](/guide/images/pigjump.gif "-gifcontrol-mode=click;")
+
+```pdf
+https://static.r2coding.com/r2_static/pdf/jawa.pdf
+```
+
 主页面...
 
 ![](https://cdn.jsdelivr.net/gh/DotNeter-Hpf/Images/img/20220514222412.jpg)

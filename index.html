@@ -15,6 +15,9 @@
   <!-- 复制内容后的弹窗提醒 -->
   <link rel="stylesheet" href="guide/css/sweetalert.min.css" type='text/css' media='all' />
 
+  <!-- gif -->
+  <link rel="stylesheet" href="//unpkg.com/docsify-gifcontrol/dist/docsify-gifcontrol.css">
+  
   <style>
     /*添加代码块复制按钮样式*/
     .docsify-copy-code-button {
@@ -151,6 +154,13 @@
   <!-- Docsify v4 -->
   <script src="guide/js/docsify.js"></script>
 
+  <!-- PDFObject.js 是这个插件的必需依赖 --> 
+  <script  src =" //cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js "> </script>  
+  <!-- 这是pdf embed插件的源码--> 
+  <script  src =" path-to-file/docsify-pdf-embed.js "> </script> 
+  <!-- 或者使用这个if您不是自己托管文件 --> 
+  <script  src =" //unpkg.com/docsify-pdf-embed-plugin/src/docsify-pdf-embed.js "> </script>
+
   <!-- 全文搜索的引用 -->
   <script src="guide/js/search.min.js"></script>
 
@@ -251,6 +261,11 @@
 <script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/prism-docker.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/prism-python.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/wugenqiang/StaticRepo/src/js/prism-go.js"></script>
+
+<!-- gif -->
+<script src="//unpkg.com/docsify-gifcontrol/dist/docsify-gifcontrol.js"></script>
+
+
 
 </body>
 
