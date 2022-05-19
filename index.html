@@ -34,25 +34,21 @@
     }
 
     /* 右侧导航栏 */
-    .NavigateDiv{
+    #NavigateDiv{
         position: fixed;
-        left: 90%;
+        left: 84%;
         top: 12%;
         font-size:13px;
         border-width: 1px;
         padding: 8px;
         border-style: solid;
-        width:180px;
+        width:300px;
     }
-   
-
   </style>
 </head>
 
 <body>
-  <div id="app">
-    当前正在加载中......
-  </div>
+  <div id="app">🏃‍🏃‍🏃‍💨 正在加载中...</div>
 
   <script>
     window.$docsify = {
@@ -63,6 +59,7 @@
       loadNavbar: true, //开启右上角导航栏    _navbar.md
       loadSidebar: true,  //侧边栏  _sidebar.md
       subMaxLevel: 4, //根据 readme.md文件中 # 标题来显示侧边栏，这里数值是多少，就显示多少层级
+      //externalLinkTarget: '_blank', //外链打开方式：_blank表示在新标签页中打开
       search: {
         paths:'auto',
         // paths: [
@@ -70,10 +67,10 @@
         //   'SqlSugar/数据库特色',
         // // 'SqlSugar/数据库特色/SqlServer',
         // ], // [] or 'auto' 自动
-        placeholder: '🔍 搜索', //搜索框提示
-        noData: '找不到结果',
+        placeholder: '🔍 搜索(只能识别超链接)', //搜索框提示
+        noData: '😒 找不到结果',
         depth: 6,
-        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+        maxAge: 14400000, // 过期时间，单位毫秒，默认一天
         hideOtherSidebarContent: false, // 是否隐藏其他侧边栏内容
         // themeColor: '#25798A',
       },
@@ -100,7 +97,7 @@
       },
       //每个页面显示最后更新时间
       timeUpdater: {
-    text: "<div align='center' width='200px' style='color:gray;font-size:15px'>-------------- 最后更新时间:&emsp;{docsify-updated} --------------</div>",
+    text: "<div align='center' width='200px' style='color:gray;font-size:15px;margin-top:250px;'>-------------- 最后更新时间:&emsp;{docsify-updated} --------------</div>",
     formatUpdated: "{YYYY} 年 {MM} 月 {DD} 日 {HH} : {mm} : {ss}",
   },
 
@@ -148,7 +145,9 @@
   <script  src =" //unpkg.com/docsify-pdf-embed-plugin/src/docsify-pdf-embed.js "> </script>
 
   <!-- 全文搜索的引用 -->
-  <script src="guide/js/search.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/search.min.js"></script> -->
+  <script src="guide/js/search.js"></script>
+  
 
   <!-- 全文搜索高亮显示 -->
   <!-- <script src="guide/js/highlight.js"></script> -->
@@ -232,8 +231,6 @@
   });
 </script>
  
-
-
 <!-- 谷歌分析 -->
 <script src="guide/js/ga.min.js"></script>
 
@@ -261,6 +258,37 @@
 <!-- 每个页面显示最后更新时间 -->
 <script src="https://cdn.jsdelivr.net/npm/docsify-updated/src/time-updater.js"></script>
 
+<!-- 滚动条滚动到底部，会跟评论功能冲突，导致a标签无法点击跳转 -->
+<script>
+$(window).scroll(function() {
+    // 变量 scrollHeight 是滚动条的总高度
+    let scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight
+    // 变量 windowHeight 是可视区的高度
+    let windowHeight = document.documentElement.clientHeight || document.body.clientHeight
+    // 变量scrollTop为当前页面的滚动条纵坐标位置
+    let scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+    // 滚动条到底部得距离 = 滚动条的总高度 - 可视区的高度 - 当前页面的滚动条纵坐标位置
+    var scrollBottom = scrollHeight - windowHeight - scrollTop
+    // console.log(scrollBottom,'scrollBottom')           
+
+    var NavigateDiv = document.getElementById("NavigateDiv");//获取到导航栏id
+    // console.log(NavigateDiv,'NavigateDiv')  
+
+    if(scrollBottom<=400){
+      console.log('<500','NavigateDiv')
+      NavigateDiv.setAttribute('style','color:red');
+      NavigateDiv.setAttribute('style','position:absolute');
+      NavigateDiv.setAttribute('style','top:-22%');
+    }
+    else{
+      console.log('>500','NavigateDiv')
+      console.log(NavigateDiv.style.width)
+      NavigateDiv.setAttribute('style','static');
+      NavigateDiv.setAttribute('style','position:fixed');
+      NavigateDiv.setAttribute('style','top:12%');
+    }
+})
+</script>
 </body>
 
 </html>
