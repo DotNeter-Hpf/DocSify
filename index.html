@@ -137,11 +137,9 @@
   <!-- Docsify v4 -->
   <script src="guide/js/docsify.js"></script>
 
-  <!-- PDFObject.js 是这个插件的必需依赖 --> 
+  <!-- PDF插件 --> 
   <script  src =" //cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js "> </script>  
-  <!-- 这是pdf embed插件的源码--> 
   <script  src =" path-to-file/docsify-pdf-embed.js "> </script> 
-  <!-- 或者使用这个if您不是自己托管文件 --> 
   <script  src =" //unpkg.com/docsify-pdf-embed-plugin/src/docsify-pdf-embed.js "> </script>
 
   <!-- 全文搜索的引用 -->
@@ -258,7 +256,10 @@
 <!-- 每个页面显示最后更新时间 -->
 <script src="https://cdn.jsdelivr.net/npm/docsify-updated/src/time-updater.js"></script>
 
-<!-- 滚动条滚动到底部，会跟评论功能冲突，导致a标签无法点击跳转 -->
+<!-- 
+  滚动条滚动到底部，会跟评论功能冲突，导致a标签无法点击跳转
+  当滚动条距离底部<=400的时候，使用absolute；反之，使用fixed
+-->
 <script>
 $(window).scroll(function() {
     // 变量 scrollHeight 是滚动条的总高度
