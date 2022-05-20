@@ -33,6 +33,16 @@
       border-radius: 2px;
     }
 
+    /*滚动条样式 start*/
+    /* 滚动条宽度 */
+    ::-webkit-scrollbar{width:8px;}
+    /* 滚动条颜色 */
+    ::-webkit-scrollbar-thumb{
+      background: #33a9dc;
+      background-image: linear-gradient(#6ecd56, #33a9dc, #cb6196, #c16290);
+      border-radius: 2em;
+    }
+
     /* 右侧导航栏 */
     #NavigateDiv{
         position: fixed;
@@ -44,6 +54,21 @@
         border-style: solid;
         width:300px;
     }
+
+    /*加粗样式添加颜色*/
+    .markdown-section strong {
+      color: rgb(239, 112, 96);
+    }
+
+    h1,h2,h3,h4,h5,h6 span{
+      display:inline-block;
+      background: rgb(66, 185, 131);
+      color:#ffffff;
+      padding:  10px  16px;
+      border-radius:5px;
+      box-shadow: 1px 1px 3px black;
+    }
+
   </style>
 </head>
 
@@ -58,7 +83,7 @@
       coverpage: true, //开启封面脑功能   _coverpage.md
       loadNavbar: true, //开启右上角导航栏    _navbar.md
       loadSidebar: true,  //侧边栏  _sidebar.md
-      subMaxLevel: 4, //根据 readme.md文件中 # 标题来显示侧边栏，这里数值是多少，就显示多少层级
+      subMaxLevel: 2, //根据 readme.md文件中 # 标题来显示侧边栏，这里数值是多少，就显示多少层级
       //externalLinkTarget: '_blank', //外链打开方式：_blank表示在新标签页中打开
       search: {
         paths:'auto',
@@ -273,14 +298,14 @@ $(window).scroll(function() {
     // console.log(NavigateDiv,'NavigateDiv')  
 
     if(scrollBottom<=400){
-      console.log('<500','NavigateDiv')
+      // console.log('<500','NavigateDiv')
       NavigateDiv.setAttribute('style','color:red');
       NavigateDiv.setAttribute('style','position:absolute');
       NavigateDiv.setAttribute('style','top:-22%');
     }
     else{
-      console.log('>500','NavigateDiv')
-      console.log(NavigateDiv.style.width)
+      // console.log('>500','NavigateDiv')
+      // console.log(NavigateDiv.style.width)
       NavigateDiv.setAttribute('style','static');
       NavigateDiv.setAttribute('style','position:fixed');
       NavigateDiv.setAttribute('style','top:12%');
