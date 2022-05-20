@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="guide/css/sweetalert.min.css" type='text/css' media='all' />
 
   <!-- gif -->
-  <link rel="stylesheet" href="//unpkg.com/docsify-gifcontrol/dist/docsify-gifcontrol.css">
+  <link rel="stylesheet" href="guide/css/docsify-gifcontrol.css">
   
   <style>
     /*添加代码块复制按钮样式*/
@@ -138,9 +138,8 @@
   <script src="guide/js/docsify.js"></script>
 
   <!-- PDF插件 --> 
-  <script  src =" //cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js "> </script>  
-  <script  src =" path-to-file/docsify-pdf-embed.js "> </script> 
-  <script  src =" //unpkg.com/docsify-pdf-embed-plugin/src/docsify-pdf-embed.js "> </script>
+  <script  src ="guide/js/pdfobject.min.js"> </script>  
+  <script  src ="guide/js/docsify-pdf-embed.js"> </script>
 
   <!-- 全文搜索的引用 -->
   <!-- <script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/search.min.js"></script> -->
@@ -206,7 +205,7 @@
  <script src="guide/js/docsify-copy-code.min.js"></script>
 
 <!-- 复制提醒 -->
-<script src="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.js"></script>
+<script src="guide/js/sweetalert.min.js"></script>
 <script>
   document.body.oncopy = function () {
    swal("复制成功 🎉",
@@ -235,31 +234,29 @@
 <!-- 代码块样式优化-->
 <script src="guide/js/prism-c.js"></script>
 <script src="guide/js/prism-csharp.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/prism-css.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/prism-sql.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/prism-markdown.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/prism-json.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/prism-docker.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/prism-python.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/wugenqiang/StaticRepo/src/js/prism-go.js"></script>
+<script src="guide/js/prism-css.js"></script>
+<script src="guide/js/prism-sql.js"></script>
+<script src="guide/js/prism-markdown.js"></script>
+<script src="guide/js/prism-json.min.js"></script>
+<script src="guide/js/prism-docker.js"></script>
+<script src="guide/js/prism-python.js"></script>
+<script src="guide/js/prism-go.js"></script>
 
 <!-- gif -->
-<script src="//unpkg.com/docsify-gifcontrol/dist/docsify-gifcontrol.js"></script>
+<script src="guide/js/docsify-gifcontrol.js"></script>
 
 <!-- valine评论功能 -->
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script src="//unpkg.com/docsify-valine/dist/docsify-valine.min.js"></script>
+<script src='guide/js/Valine.min.js'></script>
+<script src="guide/js/docsify-valine.min.js"></script>
 
 <!-- 页面上方出现绿色的进度条 -->
-<script src="https://cdn.jsdelivr.net/npm/docsify-progress@latest/dist/progress.min.js"></script>
+<script src="guide/js/progress.min.js"></script>
 
 <!-- 每个页面显示最后更新时间 -->
-<script src="https://cdn.jsdelivr.net/npm/docsify-updated/src/time-updater.js"></script>
+<script src="guide/js/time-updater.js"></script>
 
-<!-- 
-  滚动条滚动到底部，会跟评论功能冲突，导致a标签无法点击跳转
-  当滚动条距离底部<=400的时候，使用absolute；反之，使用fixed
--->
+<!-- 滚动条滚动到底部，会跟评论功能冲突，导致a标签无法点击跳转
+  滚动条距离底部<=400的，使用absolute；反之，使用fixed -->
 <script>
 $(window).scroll(function() {
     // 变量 scrollHeight 是滚动条的总高度
