@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>DotNeter-Hpf\'s  Blog</title>
+  <link rel="icon" href="guide/images/TabIcon1.ico">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
@@ -60,6 +61,7 @@
       color: rgb(239, 112, 96);
     }
 
+    /* 改变 h2 - h6的样式 */
     h2,h3,h4,h5,h6 span{
       display:inline-block;
       background: rgb(66, 185, 131);
@@ -68,7 +70,103 @@
       border-radius:5px;
       box-shadow: 1px 1px 3px black;
     }
+    /* 代码块头部三个点后面背景样式 */
+    .markdown-section pre{
+      background-color: #F0F0F0;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      padding: 10px;
+    }
+    /* 代码块头部三个点样式 */
+    .markdown-section pre:before {
+      content: ' ';
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin-left: 10px;
+      border-radius: 50%;
+      background-color: #fd6458;
+      box-shadow: 20px 0 0 #ffbf2b, 40px 0 0 #24cc3d;
+    }
+    /* 代码块中心 */
+    .markdown-section pre>code {
+      font-family: 'Inconsolata', consolas,"PingFang SC", "Microsoft YaHei", monospace !important;
+      font-size: 15px !important;
+      white-space:pre !important;
+      line-height: 1.5 !important;
+      -moz-tab-size: 4 !important;
+      -o-tab-size: 4 !important;
+      tab-size: 4 !important;
+    }
+    /* 代码块 */
+     img,pre {
+      border-radius: 5px;
+    } 
+    /* 代码块 */
+     .markdown-section > div > img, .markdown-section pre {
+      box-shadow: 2px 2px 20px 6px rgb(255, 255, 255) !important;
+    } 
+    /* 代码块 */
+    @media (min-width:600px) {
+      .markdown-section pre>code {
+        font-size: 15px !important;
+        letter-spacing: 1.1px !important;
+      }
+    }
+    /* 代码块 */
+    @media (max-width:600px) {
+      .markdown-section pre>code {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 16px !important;
+      }
+      pre:after {
+        content: "" !important;
+      }
+    }
+    /* 代码块 */
+    section.cover h1 {
+      margin: 0;
+    }
+    /* 代码块 */
+    pre {
+      background-color: var(--codeTextColor);
+    }
+    /* 代码块 */
+    @media (min-width:600px) {
+      pre code {
+        /*box-shadow: 2px 1px 20px 2px #aaa;*/
+        /*border-radius: 10px !important;*/
+        padding-left: 20px !important;
+      }
+    }
+    /* 代码块 */
+    @media (max-width:600px) {
+      pre {
+        padding-left: 3px !important;
+        padding-right: 3px !important;
+        margin-left: -20px !important;
+        margin-right: -20px !important;
+        box-shadow: 0px 0px 20px 0px #f7f7f7 !important;
+      }
+      /*代码块复制按钮默认隐藏*/
+      .docsify-copy-code-button {
+        display: none;
+      }
+      .advertisement{
+        display: none;
+      }
+    }
+    /* 代码块 */
+    .markdown-section pre {
+      padding-left: 0 !important;
+      padding-right: 0px !important;
+    }
 
+    /* !> tip字体大小 */
+    .markdown-section p.tip {
+      font-size: 20px !important;
+    }
   </style>
 </head>
 
