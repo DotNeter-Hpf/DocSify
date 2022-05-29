@@ -181,7 +181,7 @@
       coverpage: true, //开启封面脑功能   _coverpage.md
       loadNavbar: true, //开启右上角导航栏    _navbar.md
       loadSidebar: true,  //侧边栏  _sidebar.md
-      subMaxLevel: 2, //根据 readme.md文件中 # 标题来显示侧边栏，这里数值是多少，就显示多少层级
+      subMaxLevel: 3, //根据 readme.md文件中 # 标题来显示侧边栏，这里数值是多少，就显示多少层级
       //externalLinkTarget: '_blank', //外链打开方式：_blank表示在新标签页中打开
       search: {
         paths:'auto',
@@ -378,6 +378,7 @@
 <!-- 每个页面显示最后更新时间 -->
 <script src="guide/js/time-updater.js"></script>
 
+
 <!-- 滚动条滚动到底部，会跟评论功能冲突，导致a标签无法点击跳转
   滚动条距离底部<=400的，使用absolute；反之，使用fixed -->
 <script>
@@ -410,6 +411,7 @@ $(window).scroll(function() {
     }
 })
 </script>
+
 </body>
 
 </html>

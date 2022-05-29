@@ -1,11 +1,20 @@
-<!-- - [<span class="iconfont icon-csdn"></span> CSDN](https://blog.csdn.net/Myzhouzhou) -->
+- [<span class="iconfont icon-csdn"></span> CSDN](https://blog.csdn.net/Myzhouzhou)
 
 - 开发必备
-  - [**在线ASCII码表**](http://www.fly63.com/tool/ascii/)
-  - [**正则表达式调试工具**](https://regexr.com/)
-  - [**正则表达式可视化**](https://jex.im/regulex/)
-  - [:cn:  :ru:](https://jex.im/regulex/)
+  - [**翻墙必备**](https://hello-shudong.com/auth/register?code=81os)
+  - [**JSON解析**](https://www.json.cn/)
+  - [**IP查询**](https://www.ipip.net/ip.html)
+
+- 学习必备
+  - [**电子图书馆**](https://zh.z-lib.org/)
+  - [**没有你搜不到的软件**](https://www.ypojie.com/)
+  - [**IT问答网站**](https://stackoverflow.com/)
+  
 
 - 创作必备
   - [**在线画图工具**](https://www.processon.com/)
   - [**在线思维导图**](http://www.mindline.cn/webapp)
+  - [**免费logo在线制作**](https://www.uugai.com/)
+  - [**在线代码截图**](https://www.dute.org/code-snapshot)
+ 
+

@@ -1,38 +1,57 @@
-## 💳Card(卡片)
+
+## **📑配置MaterialDesign**
+全局使用MD
+
+### 1.1 安装 MaterialDesignThemes
+
+![](https://cdn.jsdelivr.net/gh/DotNeter-Hpf/Images/img/20220529220617.png)
+
+### 1.2 修改App.xaml
+
+* ` 引入命名空间`
+
+```csharp
+xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+```
+
+* `Application.Resources内添加代码`
+
+```csharp
+<Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <materialDesign:BundledTheme
+                    BaseTheme="Light"
+                    PrimaryColor="DeepPurple"
+                    SecondaryColor="Lime" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+```
+
+* `注意：`
+    * NuGet引入的工具包 MaterialDesignThemes GitHub → Wiki菜单中的 Super Quick Start (超级快速入门)
+
+    * BaseTheme 设置主题颜色 Light(亮的);Dark(黑色)
+
+
+
+
+[📄文档参考：快速入门](https://github.com/MaterialDesignInXAML/MaterialDesignInXamlToolkit/wiki/Super-Quick-Start)
+
+
+
+
+## **💳Card(卡片)**
 带有阴影效果的卡片样式
 
 ### 1.1 效果图
 
 ![](https://cdn.jsdelivr.net/gh/DotNeter-Hpf/Images/img/20220521003834.png) ![](https://cdn.jsdelivr.net/gh/DotNeter-Hpf/Images/img/20220521003859.png)
 
-### 1.2 安装 MaterialDesignThemes
 
-![](https://cdn.jsdelivr.net/gh/DotNeter-Hpf/Images/img/20220521003209.png)
-
-### 1.3 修改App.xaml
-  * `引入命名空间`
-```csharp
-xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-```
-  * `Application.Resources内添加代码`
-```sharp
-<Application.Resources>
-    <ResourceDictionary>
-        <ResourceDictionary.MergedDictionaries>
-            <materialDesign:BundledTheme
-                BaseTheme="Light"
-                PrimaryColor="DeepPurple"
-                SecondaryColor="Lime" />
-            <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
-        </ResourceDictionary.MergedDictionaries>
-    </ResourceDictionary>
-</Application.Resources>
-```
-  `注意：`
-    * `NuGet引入的工具包 MaterialDesignThemes GitHub → Wiki菜单中的 Super Quick Start (超级快速入门)`
-    * `BaseTheme 设置主题颜色 Light(亮的);Dark(黑色)`
-
-### 1.4 案例一：单个Card
+### 1.2 案例一：单个Card
 
 粘贴图片后，点击图片，属性 → 生成操作 改成 '资源'
 
@@ -164,7 +183,7 @@ xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
 </Window>
 ```
 
-### 1.5 案例二：数据模板
+### 1.3 案例二：数据模板
 我使用的是Prism框架
 将控件以及样式封装起来，做成模板，动态创建使用
 
@@ -272,3 +291,7 @@ public class MainViewModel : BindableBase
     </Grid>
 </Window>
 ```
+
+
+
+## **下一个是什么呢**
