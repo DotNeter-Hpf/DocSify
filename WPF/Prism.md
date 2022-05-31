@@ -77,3 +77,15 @@ Visual Studio → 创建新项目 → Prism Blank App(WPF)
 #### 测试标题5
 
 ##### 测试标题6
+
+
+<div id="NavigateDiv">
+<table style="border:none;">
+    <tr style="border:none;">
+    <td style="border:none;width:300px"><a style="color:var(--sidebarSublink);font-size:18px;" > 目录导航 </a></td>
+    </tr>
+    <tr style="border:none;">
+    <td style="border:none;width:300px"><a style="color:var(--sidebarSublink)" href="/#/WPF/Prism?id=创建prism" > 创建Prism </a></td>
+    </tr>
+</table>
+</div>

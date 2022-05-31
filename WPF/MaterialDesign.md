@@ -294,4 +294,150 @@ public class MainViewModel : BindableBase
 
 
 
-## **下一个是什么呢**
+## **📄DataGrid中使用PopupBox**
+点击一个单元格显示多个操作按钮，不过多占用DataGridColumn
+
+### 1.1 效果图
+
+![](https://cdn.jsdelivr.net/gh/DotNeter-Hpf/Images/img/20220531233444.png)
+
+### 1.2 实现
+
+* **`TestView.xaml`**
+
+```csharp
+ <DataGrid
+        ItemsSource="{Binding ItemsSource}"
+        CanUserAddRows="False"
+        AutoGenerateColumns="False">
+        <DataGrid.Columns>
+
+            <DataGridTextColumn
+                Binding="{Binding CustomerName}"
+                Header="客户名称"
+                ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+
+            <DataGridTextColumn
+                Binding="{Binding City}"
+                Header="城市"
+                ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />-->
+
+            <DataGridTextColumn
+                Binding="{Binding Contact}"
+                Header="联系人"
+                ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+
+            <DataGridTextColumn
+                Binding="{Binding PhoneNum}"
+                Header="联系电话"
+                ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+
+            <DataGridTemplateColumn Width="80" Header="操作">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <materialDesign:PopupBox DockPanel.Dock="Right">
+                            <materialDesign:PopupBox.ToggleContent>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Foreground="{DynamicResource PrimaryHueLightBrush}" Kind="Cog" />
+                                    <TextBlock Foreground="{DynamicResource PrimaryHueLightBrush}" Text="操作" />
+                                </StackPanel>
+                            </materialDesign:PopupBox.ToggleContent>
+                            <StackPanel>
+                                <Button Content="编辑" />
+                                <Button Content="删除" />
+                            </StackPanel>
+                        </materialDesign:PopupBox>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+
+        </DataGrid.Columns>
+    </DataGrid>
+```
+
+
+* **`TestViewModel.cs`**
+
+```csharp
+public class TestViewModel : BindableBase
+    {
+        public TestViewModel()
+        {
+            ItemsSource = CreateData();
+        }
+
+        public ObservableCollection<CustomerDto> ItemsSource { get; private set; }
+
+        public static ObservableCollection<CustomerDto> CreateData()
+        {
+            return new ObservableCollection<CustomerDto>
+            {
+                new CustomerDto(){ CustomerName="烟台一号公司",Contact="刘",PhoneNum="185"},
+                new CustomerDto(){ CustomerName="烟台二号公司",Contact="和",PhoneNum="185"},
+                new CustomerDto(){ CustomerName="烟台三号公司",Contact="刘",PhoneNum="185"}
+            };
+        }
+    }
+```
+
+* **`CustomerDto.cs`**
+
+```csharp
+public class CustomerDto : BindableBase
+    {
+        private string customerName;
+        /// <summary>
+        /// 客户名称
+        /// </summary>
+        public string CustomerName
+        {
+            get { return customerName; }
+            set { customerName = value; RaisePropertyChanged(); }
+        }
+
+
+        private string contact;
+        /// <summary>
+        /// 联系人
+        /// </summary>
+        public string Contact
+        {
+            get { return contact; }
+            set { contact = value; RaisePropertyChanged(); }
+        }
+
+
+        private string phoneNum;
+        /// <summary>
+        /// 联系电话
+        /// </summary>
+        public string PhoneNum
+        {
+            get { return phoneNum; }
+            set { phoneNum = value; RaisePropertyChanged(); }
+        }
+    }
+```
+
+
+
+<div id="NavigateDiv">
+<table style="border:none;">
+    <tr style="border:none;">
+    <td style="border:none;width:300px"><a style="color:var(--sidebarSublink);font-size:18px;" > 目录导航 </a></td>
+    </tr>
+    <tr style="border:none;">
+    <td style="border:none;width:300px"><a style="color:var(--sidebarSublink)" href="/#/WPF/MaterialDesign?id=📑配置materialdesign" > 📑配置MaterialDesign </a></td>
+    </tr>
+    <tr style="border:none;">
+    <td style="border:none;width:300px"><a style="color:var(--sidebarSublink)" href="/#/WPF/MaterialDesign?id=💳card卡片" >  💳Card(卡片) </a></td>
+    </tr>
+    <tr style="border:none;">
+    <td style="border:none;width:300px"><a style="color:var(--sidebarSublink)" href="/#/WPF/MaterialDesign?id=📄datagrid中使用popupbox" > 📄DataGrid中使用PopupBox </a></td>
+    </tr>
+</table>
+</div>

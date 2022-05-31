@@ -1,5 +1,11 @@
 - [<span class="iconfont icon-csdn"></span> CSDN](https://blog.csdn.net/Myzhouzhou)
 
+- 学习文档
+  - [**C#文档**](https://docs.microsoft.com/zh-cn/dotnet/csharp/)
+  - [**.NET文档**](https://dotnet.microsoft.com/zh-cn/)
+  - [**Microsoft技术文档**](https://docs.microsoft.com/zh-cn/)
+  - [**MAUI文档**](https://docs.microsoft.com/zh-cn/dotnet/maui/)
+
 - 开发必备
   - [**翻墙必备**](https://hello-shudong.com/auth/register?code=81os)
   - [**JSON解析**](https://www.json.cn/)
