@@ -2,7 +2,7 @@
 
 - 学习文档
   - [**C#文档**](https://docs.microsoft.com/zh-cn/dotnet/csharp/)
-  - [**.NET文档**](https://dotnet.microsoft.com/zh-cn/)
+  - [**.NET文档**](https://docs.microsoft.com/zh-cn/dotnet/fundamentals/)
   - [**Microsoft技术文档**](https://docs.microsoft.com/zh-cn/)
   - [**MAUI文档**](https://docs.microsoft.com/zh-cn/dotnet/maui/)
 
@@ -15,7 +15,6 @@
   - [**电子图书馆**](https://zh.z-lib.org/)
   - [**没有你搜不到的软件**](https://www.ypojie.com/)
   - [**IT问答网站**](https://stackoverflow.com/)
-  
 
 - 创作必备
   - [**在线画图工具**](https://www.processon.com/)
