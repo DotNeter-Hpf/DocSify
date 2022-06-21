@@ -1,3 +1,4 @@
 - [**首页**](/README.md "DotNeter-Hpf's  Blog")
 - [**SqlSugar**](SqlSugar/ "SqlSugar")
 - [**WPF**](WPF/ "WPF")
+- [**SyncFusion**](SyncFusion/ "SyncFusion")
