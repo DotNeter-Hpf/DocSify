@@ -9,7 +9,7 @@
 <!-- 每个a标签后追加 target="_blank"  实现点击后打开一个新的页面 -->
 <tr style="border:none;">
 <td style="border:none;height:50px;width:120px"><a href="/#/SyncFusion/Winform/安装" >安装 </a></td>
-<!-- <td style="border:none;height:50px;width:120px"><a href="/#/SyncFusion/Winform/入门必看" >入门必看</a></td> -->
+<td style="border:none;height:50px;width:120px"><a href="/#/SyncFusion/Winform/ThemeStudio" >ThemeStudio</a></td>
 </tr>
 
 </tbody>
